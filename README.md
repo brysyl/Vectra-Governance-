@@ -116,23 +116,38 @@ ts.txt
 ```
 
 
-
 Set up your environment variables:
-cp .env.example .env
 
-Configure .env with your credentials:
+```bash
+cp .env.example .env
+```
+
+Configure `.env` with your credentials:
+
+```env
 GOOGLE_API_KEY="your-gemini-api-key"
 GCP_PROJECT_ID="your-gcp-project-id"
+```
 
-3. Local Engine Testing
+### 3. Local Engine Testing
+
 Run the Google ADK local test harness:
+
+```bash
 adk web agent.py
+```
 
 Start the FastAPI telemetry server:
-uvicorn main:app --reload --port 8000
 
-4. Send a Mock Telemetry Payload
+```bash
+uvicorn main:app --reload --port 8000
+```
+
+### 4. Send a Mock Telemetry Payload
+
 Trigger an autonomous remediation test loop:
+
+```bash
 curl -X POST "http://localhost:8000/trigger" \
      -H "Content-Type: application/json" \
      -d '{
@@ -142,16 +157,40 @@ curl -X POST "http://localhost:8000/trigger" \
        "error_rate": "19.4%",
        "timestamp": "2026-08-20T12:00:00Z"
      }'
+```
 
-☁️ Google Cloud Run Deployment
+---
+
+## ☁️ Google Cloud Run Deployment
+
 Deploy the engine directly to serverless infrastructure:
-# 1. Authenticate & Configure Project
+
+### 1. Authenticate & Configure Project
+
+```bash
 gcloud auth login
 gcloud config set project [YOUR_PROJECT_ID]
 gcloud services enable run.googleapis.com secretmanager.googleapis.com aiplatform.googleapis.com
+```
 
-# 2. Store Secrets in Secret Manager
+### 2. Store Secrets in Secret Manager
+
+```bash
 echo $GOOGLE_API_KEY | gcloud secrets create GOOGLE_API_KEY --data-file=-
+```
+
+### 3. Deploy ADK Engine to Cloud Run
+
+```bash
+gcloud run deploy vectra-governance-core \
+  --source . \
+  --region us-central1 \
+  --allow-unauthenticated \
+  --set-secrets="GOOGLE_API_KEY=GOOGLE
+_API_KEY:latest"
+```
+
+
 
 # 3. Deploy ADK Engine to Cloud Run
 gcloud run deploy vectra-governance-core \
