@@ -97,7 +97,7 @@ brysyl/Vectra-Governance/
 ### 1. Repository Setup
 
 ```bash
-git clone https://github.com/brysyl/Vectra-Governance.git
+git clone https://github.com/brysyl/Vectra-Governance-.git
 cd Vectra-Governance
 ```
 
