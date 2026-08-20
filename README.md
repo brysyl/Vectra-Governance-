@@ -199,11 +199,16 @@ gcloud run deploy vectra-governance-core \
   --allow-unauthenticated \
   --set-secrets="GOOGLE_API_KEY=GOOGLE_API_KEY:latest"
 
-🛡️ Zero-Trust Security Protocols
- * Audit Transparency: Every reasoning step and tool call is output as a structured JSON telemetry log and recorded to Firestore.
- * Escalation Rules: Any action forecasted to exceed a 15% increase in hourly burn rate automatically suspends execution and triggers escalate_to_human_sre.
- * gVisor Container Sandbox: Diagnostic scripts run within kernel-isolated environments to protect production runtime contexts.
-📄 License
-Distributed under the MIT License. See LICENSE for details.
 
+## 🛡️ Zero-Trust Security Protocols
+
+* **Audit Transparency:** Every reasoning step and tool call is output as a structured JSON telemetry log and recorded to Firestore.
+* **Escalation Rules:** Any action forecasted to exceed a **15% increase in hourly burn rate** automatically suspends execution and triggers `escalate_to_human_sre`.
+* **gVisor Container Sandbox:** Diagnostic scripts run within kernel-isolated environments to protect production runtime contexts.
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for details.
 
