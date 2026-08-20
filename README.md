@@ -15,7 +15,7 @@ Vectra Governance converts cloud monitoring from passive alerting into an active
 ## ⚡ Key Highlights & Benchmark Capabilities
 
 * **Sub-15s Incident Response:** Ingests live OpenTelemetry (OTLP) feeds and executes remediation within seconds, reducing Recovery Time Objective (RTO) to near zero.
-* **Deterministic O.D.E.R Loop:** Powered by **Gemini 3.7 Pro**, enforcing a four-phase chain-of-thought: *Observe $\rightarrow$ Diagnose $\rightarrow$ Evaluate $\rightarrow$ Remediate*.
+* **Deterministic O.D.E.R Loop:** Powered by **Gemini 3.7 Pro**, enforcing a four-phase chain-of-thought: *Observe, Diagnose, Evaluate, Remediate*.
 * **Zero-Trust Security & Model Armor:** Every state-changing API call is cryptographically signed (HMAC-SHA256) and verified against Model Armor policy rules to prevent prompt injection and unauthorized mutations.
 * **Hard FinOps Ceilings:** Prevents runaway scaling costs by auto-evaluating spend velocity against custom hourly budget caps before executing compute expansions.
 
