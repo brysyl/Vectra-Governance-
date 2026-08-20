@@ -192,13 +192,17 @@ _API_KEY:latest"
 
 
 
-# 3. Deploy ADK Engine to Cloud Run
+### 3. Deploy ADK Engine to Cloud Run
+
+```bash
 gcloud run deploy vectra-governance-core \
   --source . \
   --region us-central1 \
   --allow-unauthenticated \
   --set-secrets="GOOGLE_API_KEY=GOOGLE_API_KEY:latest"
+```
 
+---
 
 ## 🛡️ Zero-Trust Security Protocols
 
@@ -211,4 +215,5 @@ gcloud run deploy vectra-governance-core \
 ## 📄 License
 
 Distributed under the MIT License. See `LICENSE` for details.
+
 
