@@ -1,0 +1,6 @@
+{
+  "name": "Vectra Governance",
+  "description": "Gemini-Powered Autonomous Infrastructure Remediation & FinOps Engine with Level 4 O.D.E.R. Loop",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
