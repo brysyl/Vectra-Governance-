@@ -98,7 +98,7 @@ brysyl/Vectra-Governance/
 
 ```bash
 git clone https://github.com/brysyl/Vectra-Governance-.git
-cd Vectra-Governance
+cd Vectra-Governance-
 ```
 
 ### 2. Backend Engine Setup
