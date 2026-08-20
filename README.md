@@ -67,8 +67,9 @@ graph TD
 ```
 
 
+## 📁 Repository Structure
 
-📁 Repository Structure
+```text
 brysyl/Vectra-Governance/
 ├── assets/                  # High-density UI assets & architecture diagrams
 ├── prompts/
@@ -82,24 +83,39 @@ brysyl/Vectra-Governance/
 ├── requirements.txt         # Python dependencies (google-adk, fastapi, uvicorn)
 ├── package.json             # Frontend dependency manifest
 └── README.md                # Technical documentation
+```
 
-🚀 Quickstart & Local Deployment
-Prerequisites
- * Python 3.12+
- * Bun or Node.js 20+
- * Google Cloud CLI (gcloud)
-1. Repository Setup
-git clone [https://github.com/brysyl/Vectra-Governance.git](https://github.com/brysyl/Vectra-Governance.git)
+---
+
+## 🚀 Quickstart & Local Deployment
+
+### Prerequisites
+* Python 3.12+
+* Bun or Node.js 20+
+* Google Cloud CLI (`gcloud`)
+
+### 1. Repository Setup
+
+```bash
+git clone https://github.com/brysyl/Vectra-Governance.git
 cd Vectra-Governance
+```
 
-2. Backend Engine Setup
-Create and activate a virtual environment using venv or uv:
+### 2. Backend Engine Setup
+
+Create and activate a virtual environment using `venv` or `uv`:
+
+```bash
 # Using Python venv
 python3 -m venv .venv
 source .venv/bin/activate
 
 # Install backend dependencies
-pip install -r requirements.txt
+pip install -r requiremen
+ts.txt
+```
+
+
 
 Set up your environment variables:
 cp .env.example .env
