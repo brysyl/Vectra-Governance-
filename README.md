@@ -21,36 +21,42 @@ Vectra Governance converts cloud monitoring from passive alerting into an active
 
 ---
 
-## 🧠 System Architecture & O.D.E.R Reasoning Engine
+
+## 🏗️ System Architecture & O.D.E.R Reasoning Engine
 
 Vectra Governance orchestrates autonomous workflows using the **Google Agent Development Kit (ADK)** deployed on **Google Cloud Run**.
 
 ```mermaid
 graph TD
-    subgraph "Ingestion Layer"
+    subgraph Ingestion["Ingestion Layer"]
         A[Cloud Monitoring / Latency Alerts] -->|OTLP Stream| B(Vectra Governance Core)
         API[Cloud Billing API] -->|Cost Velocity Telemetry| B
     end
 
-    subgraph "Vectra ADK Reasoning Engine (Cloud Run)"
+    subgraph ADK["Vectra ADK Reasoning Engine (Cloud Run)"]
         B <-->|O.D.E.R Reasoning Loop| C{Gemini 3.7 Pro}
         B <-->|Policy Verification| MA[Model Armor & Guardrails]
     end
 
-    subgraph "Audit & State Persistence"
+    subgraph Audit["Audit & State Persistence"]
         B -->|Encrypted State Sync| D[(Firestore Audit Ledger)]
         B -->|End-to-End Traces| E[Google Cloud Trace / Logging]
         F[Google Secret Manager] -.->|Zero-Trust Auth Keys| B
     end
 
-    subgraph "Autonomous Tool Execution"
+    subgraph Execution["Autonomous Tool Execution"]
         B -->|Scale In/Out| T1[scale_cloud_run_service]
         B -->|Pod Recycle| T2[restart_gke_pods]
         B -->|Security Rules| T3[apply_cloud_armor_security_rule]
         B -->|Container Isolation| T4[execute_gvisor_sandbox]
     end
+```
 
-🔄 The O.D.E.R Loop (Execution Lifecycle)
+---
+
+## 🔄 The O.D.E.R Loop (Execution Lifecycle)
+
+```text
  [01. OBSERVE] ────► Ingests high-resolution metric telemetry & stack traces.
        │
  [02. DIAGNOSE] ───► Isolates root cause (e.g., L7 Botnet flood vs. GC heap memory leak).
@@ -58,6 +64,9 @@ graph TD
  [03. EVALUATE] ───► Simulates mitigation options against FinOps caps & blast radius.
        │
  [04. REMEDIATE] ──► Invokes cryptographically signed tools to resolve the incident.
+```
+
+
 
 📁 Repository Structure
 brysyl/Vectra-Governance/
