@@ -71,18 +71,25 @@ graph TD
 
 ```text
 brysyl/Vectra-Governance/
-├── assets/                  # High-density UI assets & architecture diagrams
+├── assets/
+│   └── .gitignore            # Assets directory configuration
 ├── prompt/
-│   └── vectra_core.md       # Primary O.D.E.R system instructions & guardrail policies
+│   └── vectra_core.md       # Primary O.D.E.R system instructions & guardrails
 ├── src/
-│   ├── components/          # High-performance React / TSX telemetry dashboard panels
-│   └── app/                 # Frontend layout & state orchestration
-├── agent.py                 # Google ADK root_agent initialization & tool binding
-├── main.py                  # FastAPI webhook ingestion endpoint
-├── server.ts                # Bun / Node server entrypoint
-├── requirements.txt         # Python dependencies (google-adk, fastapi, uvicorn)
-├── package.json             # Frontend dependency manifest
-└── README.md                # Technical documentation
+│   ├── components/           # React component modules
+│   ├── data/                 # Static data & state definitions
+│   ├── App.tsx               # Primary application layout
+│   ├── index.css             # Global styling
+│   ├── main.tsx              # React entry point
+│   └── types.ts              # System TypeScript types
+├── .env.example              # Environment variables template
+├── .gitignore                # Gitignore rules
+├── README.md                 # Technical overview & documentation
+├── bun.lock                  # Bun dependency lockfile
+├── index.html                # Application DOM entry
+├── metadata.json             # App metadata configuration
+└── package.json              # Project dependencies & scripts
+
 ```
 
 ---
