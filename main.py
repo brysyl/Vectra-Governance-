@@ -3,30 +3,16 @@ import uuid
 from datetime import datetime, timezone
 from fastapi import FastAPI
 from pydantic import BaseModel
-from dotenv import load_dotenv
-
-# Try importing the AI SDK (Works in Cloud Run, fails gracefully locally on Termux)
-try:
-    from google import genai
-    AI_AVAILABLE = True
-except ImportError:
-    AI_AVAILABLE = False
-
-load_dotenv()
+from google import genai
 
 app = FastAPI(title="Vectra Governance Core", version="1.0.0")
 
-# Initialize Vertex AI Client (Will use Cloud Run's native credentials)
-client = None
-if AI_AVAILABLE:
-    try:
-        client = genai.Client(
-            vertexai=True, 
-            project=os.getenv("GOOGLE_CLOUD_PROJECT"), 
-            location=os.getenv("GOOGLE_CLOUD_LOCATION")
-        )
-    except Exception as e:
-        print(f"Vertex AI initialization error: {e}")
+# Initialize Vertex AI Client securely via Cloud Run's native IAM
+client = genai.Client(
+    vertexai=True, 
+    project=os.getenv("GOOGLE_CLOUD_PROJECT", "ginseng-3c019"), 
+    location=os.getenv("GOOGLE_CLOUD_LOCATION", "us-central1")
+)
 
 class ExecutionRequest(BaseModel):
     payload: str
@@ -48,14 +34,11 @@ async def execute_oder_loop(request: ExecutionRequest):
             status = "HALTED"
         else:
             print(f"[{execution_id}] EXECUTE: Routing to Vertex AI Engine...")
-            if AI_AVAILABLE and client:
-                response = client.models.generate_content(
-                    model='gemini-2.5-flash',
-                    contents=request.payload,
-                )
-                engine_response = response.text
-            else:
-                engine_response = f"Simulated fallback remediation: {request.payload}"
+            response = client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=request.payload,
+            )
+            engine_response = response.text
             status = "SUCCESS"
         
         print(f"[{execution_id}] REFLECT: Verifying state integrity...")
@@ -83,4 +66,4 @@ async def execute_oder_loop(request: ExecutionRequest):
 
 @app.get("/health")
 async def health_check():
-    return {"status": "online", "engine": "O.D.E.R", "ai_connected": AI_AVAILABLE}
+    return {"status": "online", "engine": "O.D.E.R", "ai_connected": True, "environment": "production"}
