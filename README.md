@@ -72,7 +72,7 @@ graph TD
 ```text
 brysyl/Vectra-Governance/
 ├── assets/                  # High-density UI assets & architecture diagrams
-├── prompts/
+├── prompt/
 │   └── vectra_core.md       # Primary O.D.E.R system instructions & guardrail policies
 ├── src/
 │   ├── components/          # High-performance React / TSX telemetry dashboard panels
