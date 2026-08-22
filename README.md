@@ -89,6 +89,7 @@ brysyl/Vectra-Governance/
 ├── index.html                # Application DOM entry
 ├── metadata.json             # App metadata configuration
 └── package.json              # Project dependencies & scripts
+└── License                   # MIT License
 
 ```
 
