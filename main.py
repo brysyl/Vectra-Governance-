@@ -35,7 +35,7 @@ async def execute_oder_loop(request: ExecutionRequest):
         else:
             print(f"[{execution_id}] EXECUTE: Routing to Vertex AI Engine...")
             response = client.models.generate_content(
-                model='gemini-3.5-flash',
+                model='gemini-3.7-pro',
                 contents=request.payload,
             )
             engine_response = response.text
