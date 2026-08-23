@@ -2,13 +2,24 @@
 
 **Gemini 3.7-Powered Level 4 Autonomous Infrastructure & FinOps Remediation Engine**
 
-[![Built with Google ADK](https://img.shields.io/badge/Built_with-Google_ADK-blue?logo=googlecloud)](https://adk.dev)
-[![Powered by Gemini 3.7](https://img.shields.io/badge/Model-Gemini_3.7_Pro-orange)](https://cloud.google.com/vertex-ai)
-[![Runtime Environment](https://img.shields.io/badge/Runtime-Google_Cloud_Run-blue?logo=googlecloud)](https://cloud.google.com/run)
-[![Security Policy](https://img.shields.io/badge/Security-Zero--Trust_Model_Armor-green)](https://cloud.google.com/security)
-[![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
+![Built with](https://img.shields.io/badge/Built%20with-Google%20GenAI%20SDK-blue)
+![Model](https://img.shields.io/badge/Model-Gemini%203.7%20Pro-orange)
+![Runtime](https://img.shields.io/badge/Runtime-Google%20Cloud%20Run-blue)
+![Security](https://img.shields.io/badge/Security-Zero--Trust%20Model%20Armor-green)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-Vectra Governance converts cloud monitoring from passive alerting into an active, self-healing site reliability network. Operating on a **Level 4 Autonomous execution model**, Vectra autonomously ingests telemetry streams, diagnoses root causes, evaluates financial/SLA trade-offs, and executes signed API tool invocations to repair cloud infrastructure in under 15 seconds—without human intervention unless strict policy guardrails are breached.
+---
+
+
+## 🛠️ Tech Stack & Tools Used
+
+* **AI Reasoning Engine**: `Google GenAI SDK` (`google-genai`) running **Gemini 3.7 Pro** via Vertex AI
+* **Backend Runtime**: **Python 3.11** & **FastAPI** (Asynchronous O.D.E.R Loop Orchestration)
+* **Compute & Containerization**: **Docker** deployed to serverless **Google Cloud Run**
+* **Build & Registry**: **Google Cloud Build** & **Artifact Registry**
+* **Security & Governance**: Zero-Trust Deterministic Guardrails & IAM Credentials Parsin
+* g
+
 
 ---
 
