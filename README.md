@@ -25,8 +25,41 @@ Vectra Governance converts cloud monitoring from passive alerting into an active
 
 Vectra Governance orchestrates autonomous workflows using the **Google GenAI SDK** deployed on **Google Cloud Run**.
 
-![System Architecture](./assets/architecture-diagram.png)
+```mermaid
+graph TD
+    subgraph Ingestion["1. Telemetry Ingestion"]
+        OTLP["OpenTelemetry (OTLP) Feeds"]
+        Metrics["Cloud Monitoring / Metric Ingest"]
+    end
 
+    subgraph CoreEngine["Google Cloud Run (Vectra Engine)"]
+        SDK["Google GenAI SDK"]
+        Gemini["Gemini 3.7 Pro"]
+        ODER["O.D.E.R Reasoning Loop"]
+    end
+
+    subgraph Security["Zero-Trust Security Protocols"]
+        Armor["Model Armor Policy Guardrails"]
+        FinOps["FinOps Hourly Budget Cap (<15%)"]
+        Signer["HMAC-SHA256 Signer"]
+    end
+
+    subgraph Remediation["2. Target & Audit Execution"]
+        Tools["Signed API Tool Invocations"]
+        Firestore["Firestore Telemetry Audit Log"]
+        Infra["Target Infrastructure"]
+    end
+
+    OTLP --> SDK
+    Metrics --> SDK
+    SDK --> Gemini
+    Gemini --> ODER
+    ODER --> Armor
+    Armor --> FinOps
+    FinOps --> Signer
+    Signer --> Tools
+    Tools --> Infra
+    ODER --> Firestore
 ---
 
 
