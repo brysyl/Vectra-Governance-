@@ -2,11 +2,11 @@
 
 **Gemini 3.7-Powered Level 4 Autonomous Infrastructure & FinOps Remediation Engine**
 
-[![Built with Google GenAI SDK](https://img.shields.io/badge/Built_with-Google_ADK-blue?logo=googlecloud)](https://adk.dev)
-[![Powered by Gemini 3.7](https://img.shields.io/badge/Model-Gemini_3.7_Pro-orange)](https://cloud.google.com/vertex-ai)
-[![Runtime Environment](https://img.shields.io/badge/Runtime-Google_Cloud_Run-blue?logo=googlecloud)](https://cloud.google.com/run)
-[![Security Policy](https://img.shields.io/badge/Security-Zero--Trust_Model_Armor-green)](https://cloud.google.com/security)
-[![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
+![Built with Google GenAI SDK](https://img.shields.io/badge/Built%20with-Google%20GenAI%20SDK-4285F4?style=flat&logo=google)
+![Model Gemini 3.7 Pro](https://img.shields.io/badge/Model-Gemini%203.7%20Pro-orange)
+![Runtime Google Cloud Run](https://img.shields.io/badge/Runtime-Google%20Cloud%20Run-4285F4?style=flat&logo=googlecloud)
+![Security Zero-Trust Model Armor](https://img.shields.io/badge/Security-Zero--Trust%20Model%20Armor-green)
+![License MIT](https://img.shields.io/badge/License-MIT-blue)
 
 Vectra Governance converts cloud monitoring from passive alerting into an active, self-healing site reliability network. Operating on a **Level 4 Autonomous execution model**, Vectra autonomously ingests telemetry streams, diagnoses root causes, evaluates financial/SLA trade-offs, and executes signed API tool invocations to repair cloud infrastructure in under 15 seconds—without human intervention unless strict policy guardrails are breached.
 
@@ -15,41 +15,21 @@ Vectra Governance converts cloud monitoring from passive alerting into an active
 ## ⚡ Key Highlights & Benchmark Capabilities
 
 * **Sub-15s Incident Response:** Ingests live OpenTelemetry (OTLP) feeds and executes remediation within seconds, reducing Recovery Time Objective (RTO) to near zero.
-* **Deterministic O.D.E.R Loop:** Powered by **Gemini 3.7 Pro**, enforcing a four-phase chain-of-thought: *Observe, Diagnose, Evaluate, Remediate*.
+* **Deterministic O.D.E.R Loop:** Powered by **Gemini 3.7 Pro**, enforcing a four-phase chain-of-thought: *Observe*, *Diagnose*, *Evaluate*, *Remediate*.
 * **Zero-Trust Security & Model Armor:** Every state-changing API call is cryptographically signed (HMAC-SHA256) and verified against Model Armor policy rules to prevent prompt injection and unauthorized mutations.
 * **Hard FinOps Ceilings:** Prevents runaway scaling costs by auto-evaluating spend velocity against custom hourly budget caps before executing compute expansions.
 
 ---
 
-
 ## 🏗️ System Architecture & O.D.E.R Reasoning Engine
 
-Vectra Governance orchestrates autonomous workflows using the **Google Agent Development Kit (ADK)** deployed on **Google Cloud Run**.
+Vectra Governance orchestrates autonomous workflows using the **Google GenAI SDK** deployed on **Google Cloud Run**.
 
-```mermaid
-graph TD
-    subgraph Ingestion["Ingestion Layer"]
-        A[Cloud Monitoring / Latency Alerts] -->|OTLP Stream| B(Vectra Governance Core)
-        API[Cloud Billing API] -->|Cost Velocity Telemetry| B
-    end
+![System Architecture](./assets/architecture-diagram.png)
 
-    subgraph ADK["Vectra ADK Reasoning Engine (Cloud Run)"]
-        B <-->|O.D.E.R Reasoning Loop| C{Gemini 3.7 Pro}
-        B <-->|Policy Verification| MA[Model Armor & Guardrails]
-    end
+---
 
-    subgraph Audit["Audit & State Persistence"]
-        B -->|Encrypted State Sync| D[(Firestore Audit Ledger)]
-        B -->|End-to-End Traces| E[Google Cloud Trace / Logging]
-        F[Google Secret Manager] -.->|Zero-Trust Auth Keys| B
-    end
 
-    subgraph Execution["Autonomous Tool Execution"]
-        B -->|Scale In/Out| T1[scale_cloud_run_service]
-        B -->|Pod Recycle| T2[restart_gke_pods]
-        B -->|Security Rules| T3[apply_cloud_armor_security_rule]
-        B -->|Container Isolation| T4[execute_gvisor_sandbox]
-    end
 ```
 
 ---
