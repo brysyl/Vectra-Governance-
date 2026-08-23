@@ -20,7 +20,6 @@ Vectra Governance converts cloud monitoring from passive alerting into an active
 * **Hard FinOps Ceilings:** Prevents runaway scaling costs by auto-evaluating spend velocity against custom hourly budget caps before executing compute expansions.
 
 ---
-
 ## 🏗️ System Architecture & O.D.E.R Reasoning Engine
 
 Vectra Governance orchestrates autonomous workflows using the **Google GenAI SDK** deployed on **Google Cloud Run**.
@@ -28,11 +27,11 @@ Vectra Governance orchestrates autonomous workflows using the **Google GenAI SDK
 ```mermaid
 graph TD
     subgraph Ingestion["1. Telemetry Ingestion"]
-        OTLP["OpenTelemetry (OTLP) Feeds"]
+        OTLP["OpenTelemetry OTLP Feeds"]
         Metrics["Cloud Monitoring / Metric Ingest"]
     end
 
-    subgraph CoreEngine["Google Cloud Run (Vectra Engine)"]
+    subgraph CoreEngine["Google Cloud Run Engine"]
         SDK["Google GenAI SDK"]
         Gemini["Gemini 3.7 Pro"]
         ODER["O.D.E.R Reasoning Loop"]
@@ -40,7 +39,7 @@ graph TD
 
     subgraph Security["Zero-Trust Security Protocols"]
         Armor["Model Armor Policy Guardrails"]
-        FinOps["FinOps Hourly Budget Cap (<15%)"]
+        FinOps["FinOps Hourly Budget Cap - 15 Percent Max"]
         Signer["HMAC-SHA256 Signer"]
     end
 
@@ -60,7 +59,7 @@ graph TD
     Signer --> Tools
     Tools --> Infra
     ODER --> Firestore
----
+
 
 
 ```
