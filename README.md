@@ -2,7 +2,7 @@
 
 **Gemini 3.7-Powered Level 4 Autonomous Infrastructure & FinOps Remediation Engine**
 
-[![Built with Google ADK](https://img.shields.io/badge/Built_with-Google_ADK-blue?logo=googlecloud)](https://adk.dev)
+[![Built with Google GenAI SDK](https://img.shields.io/badge/Built_with-Google_ADK-blue?logo=googlecloud)](https://adk.dev)
 [![Powered by Gemini 3.7](https://img.shields.io/badge/Model-Gemini_3.7_Pro-orange)](https://cloud.google.com/vertex-ai)
 [![Runtime Environment](https://img.shields.io/badge/Runtime-Google_Cloud_Run-blue?logo=googlecloud)](https://cloud.google.com/run)
 [![Security Policy](https://img.shields.io/badge/Security-Zero--Trust_Model_Armor-green)](https://cloud.google.com/security)
@@ -138,7 +138,7 @@ GCP_PROJECT_ID="your-gcp-project-id"
 
 ### 3. Local Engine Testing
 
-Run the Google ADK local test harness:
+Run the Google GenAI SDK local test harness:
 
 ```bash
 adk web agent.py
