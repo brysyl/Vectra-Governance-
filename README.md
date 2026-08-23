@@ -17,8 +17,7 @@
 * **Backend Runtime**: **Python 3.11** & **FastAPI** (Asynchronous O.D.E.R Loop Orchestration)
 * **Compute & Containerization**: **Docker** deployed to serverless **Google Cloud Run**
 * **Build & Registry**: **Google Cloud Build** & **Artifact Registry**
-* **Security & Governance**: Zero-Trust Deterministic Guardrails & IAM Credentials Parsin
-* g
+* **Security & Governance**: Zero-Trust Deterministic Guardrails & IAM Credentials Parsing
 
 
 ---
