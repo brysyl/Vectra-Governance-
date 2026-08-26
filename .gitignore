@@ -9,3 +9,5 @@ dist/
 # Block system artifacts and Termux execution folders
 exec -l *
 /data/
+*.json
+.venv/
