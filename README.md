@@ -1,251 +1,99 @@
-# Vectra Governance 🛡️
+# Vectra Governance 🛡️⚡
 
-**Gemini 3.5-Powered Level 4 Autonomous Infrastructure & FinOps Remediation Engine**
+**Level-4 Autonomous SRE & Infrastructure Control Room**  
+*Built for the Google Cloud & All Things Agentic Hackathon*
 
-![Built with Google GenAI SDK](https://img.shields.io/badge/Built%20with-Google%20GenAI%20SDK-4285F4?style=flat&logo=google)
-![Model Gemini 3.5 Flash](https://img.shields.io/badge/Model-Gemini%203.5%20flash-orange)
-![Runtime Google Cloud Run](https://img.shields.io/badge/Runtime-Google%20Cloud%20Run-4285F4?style=flat&logo=googlecloud)
-![Security Zero-Trust Model Armor](https://img.shields.io/badge/Security-Zero--Trust%20Model%20Armor-green)
-![License MIT](https://img.shields.io/badge/License-MIT-blue)
+[![Google Cloud Run](https://img.shields.io/badge/Deployed_on-Google_Cloud_Run-4285F4?style=for-the-badge&logo=googlecloud)](https://vectra-governance-630243518379.us-central1.run.app)
+[![Gemini API](https://img.shields.io/badge/Powered_by-Gemini_3.5_Flash-FF6F00?style=for-the-badge&logo=google)](https://cloud.google.com/vertex-ai)
+[![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
 
-Vectra Governance converts cloud monitoring from passive alerting into an active, self-healing site reliability network. Operating on a **Level 4 Autonomous execution model**, Vectra autonomously ingests telemetry streams, diagnoses root causes, evaluates financial/SLA trade-offs, and executes signed API tool invocations to repair cloud infrastructure in under 15 seconds—without human intervention unless strict policy guardrails are breached.
-
----
-
-## ⚡ Key Highlights & Benchmark Capabilities
-
-* **Sub-15s Incident Response:** Ingests live OpenTelemetry (OTLP) feeds and executes remediation within seconds, reducing Recovery Time Objective (RTO) to near zero.
-* **Deterministic O.D.E.R Loop:** Powered by **Gemini 3.5 Flash**, enforcing a four-phase chain-of-thought: *Observe*, *Diagnose*, *Evaluate*, *Remediate*.
-* **Zero-Trust Security & Model Armor:** Every state-changing API call is cryptographically signed (HMAC-SHA256) and verified against Model Armor policy rules to prevent prompt injection and unauthorized mutations.
-* **Hard FinOps Ceilings:** Prevents runaway scaling costs by auto-evaluating spend velocity against custom hourly budget caps before executing compute expansions.
-
----
-## 🏗️ System Architecture & O.D.E.R Reasoning Engine
-
-Vectra Governance orchestrates autonomous workflows using the **Google GenAI SDK** deployed on **Google Cloud Run**.
-
-```mermaid
-graph TD
-    subgraph Ingestion["1. Telemetry Ingestion"]
-        OTLP["OpenTelemetry OTLP Feeds"]
-        Metrics["Cloud Monitoring / Metric Ingest"]
-    end
-
-    subgraph CoreEngine["Google Cloud Run Engine"]
-        SDK["Google GenAI SDK"]
-        Gemini["Gemini 3.5 Flash"]
-        ODER["O.D.E.R Reasoning Loop"]
-    end
-
-    subgraph Security["Zero-Trust Security Protocols"]
-        Armor["Model Armor Policy Guardrails"]
-        FinOps["FinOps Hourly Budget Cap - 15 Percent Max"]
-        Signer["HMAC-SHA256 Signer"]
-    end
-
-    subgraph Remediation["2. Target & Audit Execution"]
-        Tools["Signed API Tool Invocations"]
-        Firestore["Firestore Telemetry Audit Log"]
-        Infra["Target Infrastructure"]
-    end
-
-    OTLP --> SDK
-    Metrics --> SDK
-    SDK --> Gemini
-    Gemini --> ODER
-    ODER --> Armor
-    Armor --> FinOps
-    FinOps --> Signer
-    Signer --> Tools
-    Tools --> Infra
-    ODER --> Firestore
-
-
-
-```
+🌐 **Live Control Room:** [Try it out here](https://vectra-governance-630243518379.us-central1.run.app)  
+📹 **Video Demo:** [Insert YouTube Link Here]  
 
 ---
 
-## 🔄 The O.D.E.R Loop (Execution Lifecycle)
+## 🚨 The Problem: Cloud Incident Burn
+When a Layer 7 botnet flood or credential stuffing attack hits an ingress gateway, human Site Reliability Engineering (SRE) response times average **42 minutes**. Every minute spent manually analyzing logs, evaluating stack traces, and writing firewall rules burns thousands of dollars in SLA liabilities and cloud egress costs. Modern cloud-native infrastructure moves too fast for manual incident response.
 
-```text
- [01. OBSERVE] ────► Ingests high-resolution metric telemetry & stack traces.
-       │
- [02. DIAGNOSE] ───► Isolates root cause (e.g., L7 Botnet flood vs. GC heap memory leak).
-       │
- [03. EVALUATE] ───► Simulates mitigation options against FinOps caps & blast radius.
-       │
- [04. REMEDIATE] ──► Invokes cryptographically signed tools to resolve the incident.
-```
+## 💡 The Solution: Vectra Governance
+Vectra Governance is an autonomous, Level-4 SRE reliability control room powered by **Gemini on Google Cloud Vertex AI**. It executes closed-loop incident remediation using the **O.D.E.R. Loop**—transforming raw telemetry spikes into cryptographically signed, zero-trust infrastructure patches in real-time, completely without human intervention.
 
-
-## 📁 Repository Structure
-
-```text
-brysyl/Vectra-Governance/
-├── assets/
-│   └── .gitignore            # Assets directory configuration
-├── prompt/
-│   └── vectra_core.md       # Primary O.D.E.R system instructions & guardrails
-├── src/
-│   ├── components/           # React component modules
-│   ├── data/                 # Static data & state definitions
-│   ├── App.tsx               # Primary application layout
-│   ├── index.css             # Global styling
-│   ├── main.tsx              # React entry point
-│   └── types.ts              # System TypeScript types
-├── .env.example              # Environment variables template
-├── .gitignore                # Gitignore rules
-├── README.md                 # Technical overview & documentation
-├── bun.lock                  # Bun dependency lockfile
-├── index.html                # Application DOM entry
-├── metadata.json             # App metadata configuration
-└── package.json              # Project dependencies & scripts
-└── License                   # MIT License
-
-```
+### 🔄 The O.D.E.R. Loop
+* **👁️ Observe:** Ingests live telemetry logs, high-density metrics, and alert webhooks.
+* **🔍 Diagnose:** Runs multi-agent reasoning to identify anomaly root causes (e.g., origin ASNs bypassing cache).
+* **🛡️ Evaluate:** Enforces zero-trust security policy boundaries before applying changes.
+* **⚡ Remediate:** Deploys exact `gcloud compute security-policies` and infrastructure patches in seconds.
 
 ---
 
+## 🛠️ Core Capabilities
 
-## 🚀 Quick API Test
+* **Closed-Loop SRE Automation:** Moves seamlessly from log anomaly detection to live system execution.
+* **FinOps & SLA Shielding:** Instantly calculates financial exposure, cutting excess API burn and averting severe SLA penalties.
+* **Zero-Trust Enforcement:** Evaluates all proposed remediation steps against policy boundaries prior to live execution.
+* **Multi-Agent Transparency:** Provides full visibility into step-by-step SRE reasoning traces.
 
-To test the autonomous SRE remediation engine live, run the following command in your terminal:
+---
 
+## 🏗️ Tech Stack & Architecture
+
+* **AI Engine:** Google GenAI SDK (`google-genai`), Gemini via Vertex AI
+* **Backend:** Python, FastAPI, Pydantic, Uvicorn
+* **Frontend:** React, Vite, Tailwind CSS (served statically via FastAPI)
+* **Deployment:** Containerized via Docker, deployed natively on **Google Cloud Run** (`us-central1`)
+
+---
+
+## 🚀 Quickstart (Local Development)
+
+### 1. Clone the Repository
 ```bash
-curl -X POST "[https://vectra-governance-630243518379.us-central1.run.app/api/remediate](https://vectra-governance-630243518379.us-central1.run.app/api/remediate)" \
-  -H "Content-Type: application/json" \
-  -d '{"incident": "Unauthenticated credential stuffing spike saturating auth-service-v2 with 45k req/sec"}' \
-  | python3 -m json.tool
-
----
-
-## 🚀 Quickstart & Local Deployment
-
-### Prerequisites
-* Python 3.12+
-* Bun or Node.js 20+
-* Google Cloud CLI (`gcloud`)
-
-### 1. Repository Setup
-
-```bash
-git clone https://github.com/brysyl/Vectra-Governance-.git
+git clone [https://github.com/brysyl/Vectra-Governance-.git](https://github.com/brysyl/Vectra-Governance-.git)
 cd Vectra-Governance-
-```
 
-### 2. Backend Engine Setup
-
-Create and activate a virtual environment using `venv` or `uv`:
-
-```bash
-# Using Python venv
+2. Set Up Virtual Environment & Dependencies
 python3 -m venv .venv
 source .venv/bin/activate
-
-# Install backend dependencies
 pip install -r requirements.txt
-```
 
+3. Configure Environment Variables
+Create a .env file in the root directory and add your Google Gemini/Vertex API credentials:
+GEMINI_API_KEY=your_api_key_here
+PORT=8080
 
-Set up your environment variables:
+4. Run the Server
+uvicorn main:app --host 0.0.0.0 --port 8080 --reload
 
-```bash
-cp .env.example .env
-```
+The control room will be available at http://localhost:8080.
 
-Configure `.env` with your credentials:
+🧪 Testing the API
+You can trigger the multi-agent remediation engine directly via terminal.
+1. Health Check:
+curl -X GET "[https://vectra-governance-630243518379.us-central1.run.app/api/health](https://vectra-governance-630243518379.us-central1.run.app/api/health)"
 
-```env
-GOOGLE_API_KEY="your-gemini-api-key"
-GCP_PROJECT_ID="your-gcp-project-id"
-```
+2. Inject Anomaly (Remediation Test):
+curl -X POST "[https://vectra-governance-630243518379.us-central1.run.app/api/remediate](https://vectra-governance-630243518379.us-central1.run.app/api/remediate)" \
+  -H "Content-Type: application/json" \
+  -d '{"incident": "Unauthenticated credential stuffing spike saturating auth-service-v2 with 45k req/sec"}'
 
-### 3. Local Engine Testing
+☁️ Cloud Run Deployment
+Vectra Governance is fully dockerized and ready for Google Cloud Run deployment.
+# 1. Build the Docker image
+docker build -t gcr.io/your-project-id/vectra-governance .
 
-Run the Google GenAI SDK local test harness:
+# 2. Push to Google Container Registry
+docker push gcr.io/your-project-id/vectra-governance
 
-```bash
-adk web agent.py
-```
-
-Start the FastAPI telemetry server:
-
-```bash
-uvicorn main:app --reload --port 8000
-```
-
-### 4. Send a Mock Telemetry Payload
-
-Trigger an autonomous remediation test loop:
-
-```bash
-curl -X POST "http://localhost:8000/trigger" \
-     -H "Content-Type: application/json" \
-     -d '{
-       "service": "api-gateway-core",
-       "metric": "latency_spike",
-       "value": "2500ms",
-       "error_rate": "19.4%",
-       "timestamp": "2026-08-20T12:00:00Z"
-     }'
-```
-
----
-
-## ☁️ Google Cloud Run Deployment
-
-Deploy the engine directly to serverless infrastructure:
-
-### 1. Authenticate & Configure Project
-
-```bash
-gcloud auth login
-gcloud config set project [YOUR_PROJECT_ID]
-gcloud services enable run.googleapis.com secretmanager.googleapis.com aiplatform.googleapis.com
-```
-
-### 2. Store Secrets in Secret Manager
-
-```bash
-echo $GOOGLE_API_KEY | gcloud secrets create GOOGLE_API_KEY --data-file=-
-```
-
-### 3. Deploy ADK Engine to Cloud Run
-
-```bash
-gcloud run deploy vectra-governance-core \
-  --source . \
+# 3. Deploy to Cloud Run
+gcloud run deploy vectra-governance \
+  --image gcr.io/your-project-id/vectra-governance \
+  --platform managed \
   --region us-central1 \
-  --allow-unauthenticated \
-  --set-secrets="GOOGLE_API_KEY=GOOGLE
-_API_KEY:latest"
-```
+  --allow-unauthenticated
 
+👨‍💻 Author
+Bright Sylvester
+Systems Architect | Automation Engineer
 
-
-### 3. Deploy ADK Engine to Cloud Run
-
-```bash
-gcloud run deploy vectra-governance-core \
-  --source . \
-  --region us-central1 \
-  --allow-unauthenticated \
-  --set-secrets="GOOGLE_API_KEY=GOOGLE_API_KEY:latest"
-```
-
----
-
-## 🛡️ Zero-Trust Security Protocols
-
-* **Audit Transparency:** Every reasoning step and tool call is output as a structured JSON telemetry log and recorded to Firestore.
-* **Escalation Rules:** Any action forecasted to exceed a **15% increase in hourly burn rate** automatically suspends execution and triggers `escalate_to_human_sre`.
-* **gVisor Container Sandbox:** Diagnostic scripts run within kernel-isolated environments to protect production runtime contexts.
-
----
-
-## 📄 License
-
-Distributed under the MIT License. See [LICENSE](LICENSE) for details.
-
+Built for the All Things Agentic Hackathon by Google Cloud.
 
