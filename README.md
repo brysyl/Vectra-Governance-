@@ -1,6 +1,6 @@
 # Vectra Governance 🛡️
 
-**Gemini 3.7-Powered Level 4 Autonomous Infrastructure & FinOps Remediation Engine**
+**Gemini 3.5-Powered Level 4 Autonomous Infrastructure & FinOps Remediation Engine**
 
 ![Built with Google GenAI SDK](https://img.shields.io/badge/Built%20with-Google%20GenAI%20SDK-4285F4?style=flat&logo=google)
 ![Model Gemini 3.5 Flash](https://img.shields.io/badge/Model-Gemini%203.7%20Pro-orange)
