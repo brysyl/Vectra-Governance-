@@ -3,7 +3,7 @@
 **Gemini 3.5-Powered Level 4 Autonomous Infrastructure & FinOps Remediation Engine**
 
 ![Built with Google GenAI SDK](https://img.shields.io/badge/Built%20with-Google%20GenAI%20SDK-4285F4?style=flat&logo=google)
-![Model Gemini 3.5 Flash](https://img.shields.io/badge/Model-Gemini%203.7%20Pro-orange)
+![Model Gemini 3.5 Flash](https://img.shields.io/badge/Model-Gemini%203.5%20flash-orange)
 ![Runtime Google Cloud Run](https://img.shields.io/badge/Runtime-Google%20Cloud%20Run-4285F4?style=flat&logo=googlecloud)
 ![Security Zero-Trust Model Armor](https://img.shields.io/badge/Security-Zero--Trust%20Model%20Armor-green)
 ![License MIT](https://img.shields.io/badge/License-MIT-blue)
