@@ -107,6 +107,19 @@ brysyl/Vectra-Governance/
 
 ---
 
+
+## 🚀 Quick API Test
+
+To test the autonomous SRE remediation engine live, run the following command in your terminal:
+
+```bash
+curl -X POST "[https://vectra-governance-630243518379.us-central1.run.app/api/remediate](https://vectra-governance-630243518379.us-central1.run.app/api/remediate)" \
+  -H "Content-Type: application/json" \
+  -d '{"incident": "Unauthenticated credential stuffing spike saturating auth-service-v2 with 45k req/sec"}' \
+  | python3 -m json.tool
+
+---
+
 ## 🚀 Quickstart & Local Deployment
 
 ### Prerequisites
