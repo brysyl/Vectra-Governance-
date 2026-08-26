@@ -103,7 +103,7 @@ ${report.modelArmorAudit}
                 Executive SRE Post-Mortem & Incident Briefing
               </h3>
               <p className="text-[11px] text-[#888]">
-                Gemini 3.7 Pro synthesized root-cause, FinOps SLA savings, and zero-trust audit compliance
+                Gemini 3.5 Flash synthesized root-cause, FinOps SLA savings, and zero-trust audit compliance
               </p>
             </div>
           </div>

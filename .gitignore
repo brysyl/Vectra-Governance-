@@ -1,9 +1,7 @@
+# Python & Node Build Artifacts
+__pycache__/
 node_modules/
-build/
 dist/
-coverage/
+.env
 .DS_Store
-*.log
-.env*
-!.env.example
-google-cloud-sdk/
+*.pyc

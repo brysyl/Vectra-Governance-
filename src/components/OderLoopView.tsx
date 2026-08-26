@@ -289,7 +289,7 @@ export const OderLoopView: React.FC<OderLoopViewProps> = ({
             <div className="p-5 font-mono text-[11px] leading-relaxed text-[#AAA] space-y-1.5 overflow-x-auto bg-[#0A0A0C]">
               <p><span className="text-[#555]">[08:44:12]</span> <span className="text-[#00F0FF]">INFO:</span> ADK Root Agent initialized. Telemetry sentinels ingesting OTLP stream...</p>
               <p><span className="text-[#555]">[08:44:15]</span> <span className="text-[#00F0FF]">INFO:</span> Ingested alert from Cloud Monitoring: <span className="text-amber-400 font-bold">{currentIncident.title}</span></p>
-              <p><span className="text-[#555]">[08:44:16]</span> <span className="text-[#888]">PROMPT:</span> Evaluating stack traces & telemetry graphs via Gemini 3.7 Pro...</p>
+              <p><span className="text-[#555]">[08:44:16]</span> <span className="text-[#888]">PROMPT:</span> Evaluating stack traces & telemetry graphs via Gemini 3.5 Flash...</p>
               <p><span className="text-[#555]">[08:44:19]</span> <span className="text-emerald-400">REASON:</span> {oder.diagnose.rootCause}</p>
               <p><span className="text-[#555]">[08:44:20]</span> <span className="text-[#888]">GUARDRAIL:</span> Evaluating '{oder.remediate.targetTool}' against Zero-Trust Model Armor policy...</p>
               <p><span className="text-[#555]">[08:44:21]</span> <span className="text-emerald-400">POL_OK:</span> Mitigation verified within FinOps limit and blast radius.</p>

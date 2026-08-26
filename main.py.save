@@ -1,0 +1,85 @@
+import os
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+from pydantic import BaseModel
+from google import genai
+from google.genai import types
+
+app = FastAPI(title="Vectra Governance API", version="1.0.0")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+def get_client():
+    if os.getenv("GOOGLE_GENAI_USE_VERTEXAI") == "true":
+        return genai.Client(
+            vertexai=True,
+            project=os.getenv("GOOGLE_CLOUD_PROJECT", "ginseng-3c019"),
+            location=os.getenv("GOOGLE_CLOUD_LOCATION", "us-central1")
+        )
+    return genai.Client(api_key=os.getenv("GEMINI_API_KEY", "").strip())
+
+class ChatMessage(BaseModel):
+    message: str
+
+@app.post("/api/copilot")
+async def copilot_endpoint(payload: ChatMessage):
+    try:
+        client = get_client()
+        sys_prompt = (
+            "You are VECTRA_ENGINE, a Level 4 Site Reliability & Governance Agent. "
+            "Respond concisely with technical telemetry, zero-trust evaluation, or model armor metrics."
+        )
+w        res = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=payload.message,
+            config=types.GenerateContentConfig(
+                system_instruction=sys_prompt,
+                temperature=0.2
+            )
+        )
+        return {"response": res.text}
+    except Exception as err:
+        return {"response": f"VECTRA_ENGINE Execution Alert: {str(err)}"}
+
+@app.post("/api/inject-anomaly")
+@app.get("/api/inject-anomaly")
+async def inject_anomaly():
+    try:
+        client = get_client()
+        res = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents="Generate a critical L7 Botnet Flood anomaly telemetry briefing for api-gateway-core.",
+            config=types.GenerateContentConfig(
+                system_instruction="You are VECTRA_ENGINE. Return an L4 autonomous incident briefing.",
+                temperature=0.3
+            )
+        )
+        return {"status": "ANOMALY_INJECTED", "briefing": res.text}
+    except Exception as err:
+        return {"status": "FAILED", "error": str(err)}
+
+@app.get("/api/health")
+def health_check():
+    return {"status": "healthy"}
+
+# Serve static bundle files
+if os.path.exists("dist/assets"):
+    app.mount("/assets", StaticFiles(directory="dist/assets"), name="assets")
+
+# Catch-all SPA route
+@app.get("/{full_path:path}")
+async def serve_spa(full_path: str):
+    file_path = os.path.join("dist", full_path)
+    if full_path and os.path.isfile(file_path):
+        return FileResponse(file_path)
+    if os.path.exists("dist/index.html"):
+        return FileResponse("dist/index.html")
+    return {"status": "healthy", "service": "Vectra Governance Engine"}
