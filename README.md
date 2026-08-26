@@ -8,7 +8,9 @@
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
 
 🌐 **Live Control Room:** [Try it out here](https://vectra-governance-630243518379.us-central1.run.app)  
-📹 **Video Demo:** [Insert YouTube Link Here]  
+
+📹 **Video Demo:** https://youtu.be/Ne9cYmOqWNQ?si=2Odb-sdzVHB2i9fB
+
 
 ---
 
