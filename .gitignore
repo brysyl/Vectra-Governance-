@@ -5,3 +5,7 @@ dist/
 .env
 .DS_Store
 *.pyc
+
+# Block system artifacts and Termux execution folders
+exec -l *
+/data/
