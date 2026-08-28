@@ -28,7 +28,7 @@ async def autonomous_remediate(request: Request):
         incident = body.get("incident", "Layer 7 Botnet Flood on Ingress Gateway")
         
         client = get_client()
-        model_name = os.environ.get("MODEL_NAME", "gemini-1.5-pro-002")
+        model_name = os.environ.get("MODEL_NAME", "gemini-3.7-flash")
         
         prompt = f"""
         You are Vectra Governance Level 4 Autonomous SRE Agent powered by Gemini.

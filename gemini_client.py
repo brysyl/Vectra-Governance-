@@ -15,6 +15,6 @@ else:
     )
 
 response = client.models.generate_content(
-    model=os.getenv("GEMINI_MODEL", "gemini-1.5-pro-002"),
+    model=os.getenv("GEMINI_MODEL", "gemini-3.7-flash"),
     contents="Analyze system telemetry logs...",
 )

@@ -11,7 +11,7 @@ client = genai.Client(vertexai=True, project=PROJECT_ID, location=LOCATION)
 def execute_vectra_governance(payload: str) -> str:
     """Core O.D.E.R execution loop invoking Vertex AI models."""
     response = client.models.generate_content(
-        model="gemini-1.5-pro-002",
+        model="gemini-3.7-flash",
         contents=payload,
     )
     return response.text
