@@ -67,17 +67,13 @@ app.mount("/", StaticFiles(directory="dist", html=True), name="static")
 
     return {"status": "anomaly_injected", "vector": payload.get("vector"), "details": payload}
 
-@app.post("/api/inject-anomaly")
-async def inject_anomaly(payload: dict):
-    return {"status": "anomaly_injected", "vector": payload.get("vector"), "details": payload}
-
-
-@app.post("/api/inject-anomaly")
-async def inject_anomaly(payload: dict):
-    return {"status": "anomaly_injected", "vector": payload.get("vector"), "details": payload}
-
 if __name__ == "__main__":
     import os
     import uvicorn
     port = int(os.environ.get("PORT", 8080))
     uvicorn.run("main:app", host="0.0.0.0", port=port)
+
+
+@app.post("/api/inject-anomaly")
+async def inject_anomaly(payload: dict):
+    return {"status": "anomaly_injected", "vector": payload.get("vector"), "details": payload}
