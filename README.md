@@ -133,12 +133,19 @@ The control room will be available at http://localhost:8080.
 🧪 Testing the API
 You can trigger the multi-agent remediation engine directly via terminal.
 1. Health Check:
-curl -X GET "[https://vectra-governance-630243518379.us-central1.run.app/api/health](https://vectra-governance-630243518379.us-central1.run.app/api/health)"
+curl -s https://vectra-governance-630243518379.us-central1.run.app/api/health | jq .
+
 
 2. Inject Anomaly (Remediation Test):
-curl -X POST "[https://vectra-governance-630243518379.us-central1.run.app/api/remediate](https://vectra-governance-630243518379.us-central1.run.app/api/remediate)" \
+
+SECRET="vectra_secret_key_2026"
+PAYLOAD='{"origin_asn":"AS13335","threat_level":"MEDIUM","resource":"staging-auth-service"}'
+SIG="sha256=$(echo -n "$PAYLOAD" | openssl dgst -sha256 -hmac "$SECRET" | awk '{print $2}')"
+
+curl -X POST https://vectra-governance-630243518379.us-central1.run.app/api/remediate \
   -H "Content-Type: application/json" \
-  -d '{"incident": "Unauthenticated credential stuffing spike saturating auth-service-v2 with 45k req/sec"}'
+  -H "X-Hub-Signature-256: $SIG" \
+  -d "$PAYLOAD" | jq .
 
 ☁️ Cloud Run Deployment
 Vectra Governance is fully dockerized and ready for Google Cloud Run deployment.
@@ -155,7 +162,10 @@ gcloud run deploy vectra-governance \
   --region us-central1 \
   --allow-unauthenticated
 
+
+
 👨‍💻 Author
+
 Bright Sylvester
 Systems Architect | Automation Engineer
 
