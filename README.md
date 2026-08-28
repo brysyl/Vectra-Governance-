@@ -4,7 +4,7 @@
 *Built for the Google Cloud & All Things Agentic Hackathon*
 
 [![Google Cloud Run](https://img.shields.io/badge/Deployed_on-Google_Cloud_Run-4285F4?style=for-the-badge&logo=googlecloud)](https://vectra-governance-630243518379.us-central1.run.app)
-[![Gemini API](https://img.shields.io/badge/Powered_by-Gemini_3.5_Flash-FF6F00?style=for-the-badge&logo=google)](https://cloud.google.com/vertex-ai)
+[![Gemini API](https://img.shields.io/badge/Powered_by-Gemini_3.7_Flash-FF6F00?style=for-the-badge&logo=google)](https://cloud.google.com/vertex-ai)
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
 
 🌐 **Live Control Room:** [Try it out here](https://vectra-governance-630243518379.us-central1.run.app)  
@@ -54,7 +54,7 @@ flowchart TD
         end
         
         subgraph Diagnose ["🔍 DIAGNOSE"]
-            DIAG[Gemini 3.7 Pro Diagnostic Agent] -->|Root Cause & Anomaly ASN Extraction| EVAL
+            DIAG[Gemini 3.7 Flash Diagnostic Agent] -->|Root Cause & Anomaly ASN Extraction| EVAL
         end
 
         subgraph Evaluate ["🛡️ EVALUATE"]
