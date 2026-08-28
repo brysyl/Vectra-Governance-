@@ -52,7 +52,7 @@ export const PostMortemModal: React.FC<PostMortemModalProps> = ({
           }
         }),
       });
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
       setReport(data);
     } catch (err) {
       console.error("Failed to fetch post-mortem:", err);

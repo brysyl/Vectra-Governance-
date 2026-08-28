@@ -179,7 +179,7 @@ export default function App() {
         }),
       });
 
-      const oderResult = await res.json();
+      const oderResult = await res.json().catch(() => ({}));
 
       const evaluatedIncident: Incident = {
         ...newIncident,

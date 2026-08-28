@@ -80,7 +80,7 @@ Enter natural language queries or CLI commands to inspect telemetry, run diagnos
         }),
       });
 
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
 
       const botMsg: Message = {
         id: `bot-${Date.now()}`,
