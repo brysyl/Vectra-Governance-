@@ -39,11 +39,11 @@ Vectra Governance is an autonomous, Level-4 SRE reliability control room powered
 
 ## 🧩 System Architecture 
 
+```mermaid
 flowchart TD
     subgraph Ingress ["1. TELEMETRY INGESTION LAYER"]
-        L7[Layer 7 Egress / Log Spikes] --> API_GW
+        L7[Layer 7 Egress / Log Spikes] --> API_GW[FastAPI Ingestion Gateway / Docker Container]
         WH[Cloud Armor / Alert Webhooks] --> API_GW
-        API_GW[FastAPI Ingestion Gateway / Docker Container]
     end
 
     subgraph ODER ["2. MULTI-AGENT O.D.E.R. CORE ENGINE"]
@@ -77,10 +77,9 @@ flowchart TD
     subgraph ControlRoom ["4. REAL-TIME OBSERVABILITY CONTROL ROOM"]
         ODER -->|WebSocket Event Stream| DASH[React / Tailwind UI Dashboard]
         DASH --> LOGS[Auditable Action & FinOps Savings Log]
-  
     end
 
-
+```
 ---
 
 
