@@ -37,6 +37,53 @@ Vectra Governance is an autonomous, Level-4 SRE reliability control room powered
 
 ---
 
+## 🧩 System Architecture 
+
+flowchart TD
+    subgraph Ingress ["1. TELEMETRY INGESTION LAYER"]
+        L7[Layer 7 Egress / Log Spikes] --> API_GW
+        WH[Cloud Armor / Alert Webhooks] --> API_GW
+        API_GW[FastAPI Ingestion Gateway / Docker Container]
+    end
+
+    subgraph ODER ["2. MULTI-AGENT O.D.E.R. CORE ENGINE"]
+        API_GW -->|Raw Telemetry Payload| OBS
+        
+        subgraph Observe ["👁️ OBSERVE"]
+            OBS[Telemetry Ingestion Agent] -->|Structured Logs & Egress Metrics| DIAG
+        end
+        
+        subgraph Diagnose ["🔍 DIAGNOSE"]
+            DIAG[Gemini 3.7 Pro Diagnostic Agent] -->|Root Cause & Anomaly ASN Extraction| EVAL
+        end
+
+        subgraph Evaluate ["🛡️ EVALUATE"]
+            EVAL[Zero-Trust Governance Gate] <--> |Verify Constraints| POLICY[Policy Boundary Matrix]
+            POLICY --- P1[Risk Score & Reversibility]
+            POLICY --- P2[FinOps SLA / Egress Thresholds]
+            POLICY --- P3[Cryptographic Signature Check]
+        end
+
+        subgraph Remediate ["⚡ REMEDIATE"]
+            EVAL -->|Approved Patch Context| REM[Patch Synthesizer Agent]
+        end
+    end
+
+    subgraph Infrastructure ["3. EXECUTION & CLOUD INFRASTRUCTURE"]
+        REM -->|Execute gcloud CLI / Cloud API| GCP_ARMOR[Google Cloud Armor Firewall]
+        REM -->|Apply Patch| VPC[Target Cloud Run / VPC Network]
+    end
+
+    subgraph ControlRoom ["4. REAL-TIME OBSERVABILITY CONTROL ROOM"]
+        ODER -->|WebSocket Event Stream| DASH[React / Tailwind UI Dashboard]
+        DASH --> LOGS[Auditable Action & FinOps Savings Log]
+  
+    end
+
+
+---
+
+
 ## 🏗️ Tech Stack & Architecture
 
 * **AI Engine:** Google GenAI SDK (`google-genai`), Gemini via Vertex AI
