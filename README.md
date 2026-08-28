@@ -17,14 +17,17 @@
 ## 🚨 The Problem: Cloud Incident Burn
 When a Layer 7 botnet flood or credential stuffing attack hits an ingress gateway, human Site Reliability Engineering (SRE) response times average **42 minutes**. Every minute spent manually analyzing logs, evaluating stack traces, and writing firewall rules burns thousands of dollars in SLA liabilities and cloud egress costs. Modern cloud-native infrastructure moves too fast for manual incident response.
 
-## 💡 The Solution: Vectra Governance
-Vectra Governance is an autonomous, Level-4 SRE reliability control room powered by **Gemini on Google Cloud Vertex AI**. It executes closed-loop incident remediation using the **O.D.E.R. Loop**—transforming raw telemetry spikes into cryptographically signed, zero-trust infrastructure patches in real-time, completely without human intervention.
+### 💡 The Solution: Vectra Governance
+
+Vectra Governance is an autonomous, Level-4 SRE reliability control room and incident remediation gateway powered by **Gemini 3.7 Pro on Google Cloud Vertex AI**. It executes closed-loop infrastructure defense using the **O.D.E.R. Loop**—transforming live telemetry spikes into cryptographically verified, zero-trust operational patches with built-in perimeter security and Human-in-the-Loop (HITL) governance.
 
 ### 🔄 The O.D.E.R. Loop
-* **👁️ Observe:** Ingests live telemetry logs, high-density metrics, and alert webhooks.
-* **🔍 Diagnose:** Runs multi-agent reasoning to identify anomaly root causes (e.g., origin ASNs bypassing cache).
-* **🛡️ Evaluate:** Enforces zero-trust security policy boundaries before applying changes.
-* **⚡ Remediate:** Deploys exact `gcloud compute security-policies` and infrastructure patches in seconds.
+
+* 👁️ **Observe:** Ingests live telemetry logs, high-density infrastructure metrics, and alert webhooks under strict cryptographic boundaries.
+* 🔍 **Detect:** Leverages multi-agent reasoning to identify anomaly root causes and multi-vector infrastructure degradation in real time.
+* 🛡️ **Evaluate:** Enforces rigid zero-trust security policies, validating incoming payloads via **HMAC SHA-256 signatures** and vetting risk thresholds before execution.
+* ⚡ **Remediate:** Automatically executes low-risk corrections or safely triggers a **Human-in-the-Loop (HITL) interactive pause** with secure review tokens for high-risk production mutations.
+
 
 ---
 
