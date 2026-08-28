@@ -82,6 +82,7 @@ flowchart TD
 ```
 ---
 
+---
 
 ## 🏗️ Tech Stack & Architecture
 
@@ -89,6 +90,13 @@ flowchart TD
 * **Backend:** Python, FastAPI, Pydantic, Uvicorn
 * **Frontend:** React, Vite, Tailwind CSS (served statically via FastAPI)
 * **Deployment:** Containerized via Docker, deployed natively on **Google Cloud Run** (`us-central1`)
+
+---
+
+## Testing The bulletproof
+
+<img src="assets/images/hmac-rejection.jpg" alt="HMAC Rejection" width="700">
+
 
 ---
 
