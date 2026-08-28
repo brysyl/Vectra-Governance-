@@ -37,7 +37,7 @@ Vectra Governance is an autonomous, Level-4 SRE reliability control room and inc
 * **FinOps & SLA Shielding:** Instantly calculates financial exposure, cutting excess API token burn via edge HMAC rejection and averting severe SLA penalties.
 * **Zero-Trust Enforcement:** Validates all incoming payloads through cryptographic HMAC SHA-256 signatures and strict policy boundaries prior to execution.
 * **Human-in-the-Loop (HITL) Governance:** Intercepts high-risk production mutations—such as root IAM modifications—safely pausing execution and generating secure review tokens.
-* **Multi-Vector Anomaly Intelligence:** Powered by Gemini 3.7 Pro to analyze complex cascading infrastructure failures and compute precise root-cause mitigations in real time.
+* **Multi-Vector Anomaly Intelligence:** Powered by Gemini 3.7 Flash to analyze complex cascading infrastructure failures and compute precise root-cause mitigations in real time.
 * **Multi-Agent Transparency:** Provides full visibility into step-by-step SRE multi-agent reasoning traces and execution logs.
 
 ---
