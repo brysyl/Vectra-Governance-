@@ -9,7 +9,7 @@
 
 🌐 **Live Control Room:** [Try it out here](https://vectra-governance-630243518379.us-central1.run.app)  
 
-📹 **Video Demo:** https://youtu.be/Ne9cYmOqWNQ?si=2Odb-sdzVHB2i9fB
+📹 **Video Demo:** https://youtu.be/hqoMzPQYjgY?si=GcdALzEdbiN1YL8B
 
 
 ---
