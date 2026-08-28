@@ -93,10 +93,13 @@ flowchart TD
 
 ---
 
-## Testing The bulletproof
+## 🦺 Testing The bulletproof 
 
 <img src="assets/images/hmac-rejection.jpg" alt="HMAC Rejection" width="700">
 
+---
+
+<img src="assets/images/Remediate_Anomaly_Concurrency_Spike.jpg" alt="HMAC Rejection" width="700">
 
 ---
 
