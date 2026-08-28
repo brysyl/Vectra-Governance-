@@ -63,7 +63,8 @@ async def global_exception_handler(request: Request, exc: Exception):
 
 app.mount("/", StaticFiles(directory="dist", html=True), name="static")
 
-async def inject_anomaly(payload: dict):
+    return {"status": "anomaly_injected", "vector": payload.get("vector"), "details": payload}
+
     return {"status": "anomaly_injected", "vector": payload.get("vector"), "details": payload}
 
 @app.post("/api/inject-anomaly")
