@@ -19,7 +19,7 @@ When a Layer 7 botnet flood or credential stuffing attack hits an ingress gatewa
 
 ### 💡 The Solution: Vectra Governance
 
-Vectra Governance is an autonomous, Level-4 SRE reliability control room and incident remediation gateway powered by **Gemini 3.7 Pro on Google Cloud Vertex AI**. It executes closed-loop infrastructure defense using the **O.D.E.R. Loop**—transforming live telemetry spikes into cryptographically verified, zero-trust operational patches with built-in perimeter security and Human-in-the-Loop (HITL) governance.
+Vectra Governance is an autonomous, Level-4 SRE reliability control room and incident remediation gateway powered by **Gemini 3.7 Flash on Google Cloud Vertex AI**. It executes closed-loop infrastructure defense using the **O.D.E.R. Loop**—transforming live telemetry spikes into cryptographically verified, zero-trust operational patches with built-in perimeter security and Human-in-the-Loop (HITL) governance.
 
 ### 🔄 The O.D.E.R. Loop
 
@@ -31,12 +31,14 @@ Vectra Governance is an autonomous, Level-4 SRE reliability control room and inc
 
 ---
 
-## 🛠️ Core Capabilities
+### 🛠️ Core Capabilities
 
-* **Closed-Loop SRE Automation:** Moves seamlessly from log anomaly detection to live system execution.
-* **FinOps & SLA Shielding:** Instantly calculates financial exposure, cutting excess API burn and averting severe SLA penalties.
-* **Zero-Trust Enforcement:** Evaluates all proposed remediation steps against policy boundaries prior to live execution.
-* **Multi-Agent Transparency:** Provides full visibility into step-by-step SRE reasoning traces.
+* **Closed-Loop SRE Automation:** Moves seamlessly from live telemetry anomaly detection to secure infrastructure execution via Google Cloud Run.
+* **FinOps & SLA Shielding:** Instantly calculates financial exposure, cutting excess API token burn via edge HMAC rejection and averting severe SLA penalties.
+* **Zero-Trust Enforcement:** Validates all incoming payloads through cryptographic HMAC SHA-256 signatures and strict policy boundaries prior to execution.
+* **Human-in-the-Loop (HITL) Governance:** Intercepts high-risk production mutations—such as root IAM modifications—safely pausing execution and generating secure review tokens.
+* **Multi-Vector Anomaly Intelligence:** Powered by Gemini 3.7 Pro to analyze complex cascading infrastructure failures and compute precise root-cause mitigations in real time.
+* **Multi-Agent Transparency:** Provides full visibility into step-by-step SRE multi-agent reasoning traces and execution logs.
 
 ---
 
