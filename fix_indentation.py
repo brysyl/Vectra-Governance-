@@ -7,7 +7,7 @@ clean_lines = []
 for line in lines:
     stripped = line.strip()
     if any(k in stripped for k in [
-        "GEMINI_API_KEY", "genai.Client", "vertexai=True", 
+        "GEMINI_API_KEY", "genai.Client", "vertexai=True, location="global"", 
         "StaticFiles", "SAFE STATIC MOUNT", "serve_frontend"
     ]):
         continue
@@ -33,7 +33,7 @@ if api_key:
     print("--> [INIT] Initialized google-genai via API Key.", flush=True)
 else:
     print("--> [INIT] GEMINI_API_KEY missing. Falling back to Vertex AI ADC...", flush=True)
-    client = genai.Client(vertexai=True)
+    client = genai.Client(vertexai=True, location="global")
 '''.strip()
 
 # Safe static mount at absolute EOF

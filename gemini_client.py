@@ -9,7 +9,7 @@ if api_key:
 else:
     # Production Vertex AI on GCP Cloud Run
     client = genai.Client(
-        vertexai=True,
+        vertexai=True, location="global",
         project=os.getenv("GCP_PROJECT_ID"),
         location=os.getenv("GCP_REGION", "us-central1"),
     )

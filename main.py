@@ -10,7 +10,7 @@ def get_client():
     api_key = os.environ.get("GEMINI_API_KEY")
     if api_key:
         return genai.Client(api_key=api_key)
-    return genai.Client(vertexai=True)
+    return genai.Client(vertexai=True, location="global")
 
 @app.get("/api/health")
 async def health_check():

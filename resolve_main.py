@@ -7,7 +7,7 @@ filtered = []
 for line in lines:
     s = line.strip()
     if any(k in s for k in [
-        "GEMINI_API_KEY", "genai.Client", "vertexai=True", 
+        "GEMINI_API_KEY", "genai.Client", "vertexai=True, location="global"", 
         "StaticFiles", "SAFE STATIC MOUNT", "serve_frontend",
         "project=", "location="
     ]) or s == ")" or s == "else:":
@@ -38,7 +38,7 @@ if api_key:
     print("--> [INIT] Initialized google-genai via API Key.", flush=True)
 else:
     print("--> [INIT] GEMINI_API_KEY missing. Falling back to Vertex AI ADC...", flush=True)
-    client = genai.Client(vertexai=True)
+    client = genai.Client(vertexai=True, location="global")
 
 {body_code}
 

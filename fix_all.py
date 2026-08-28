@@ -44,7 +44,7 @@ if api_key:
     print("--> [INIT] Initialized google-genai via API Key.", flush=True)
 else:
     print("--> [INIT] GEMINI_API_KEY missing. Falling back to Vertex AI ADC...", flush=True)
-    client = genai.Client(vertexai=True)
+    client = genai.Client(vertexai=True, location="global")
 
 @app.get("/api/health")
 async def health_check():
