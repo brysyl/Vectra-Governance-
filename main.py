@@ -1,3 +1,4 @@
+from fastapi.staticfiles import StaticFiles
 import os
 import hmac
 import hashlib
@@ -34,7 +35,7 @@ def verify_signature(payload_body: bytes, signature_header: Optional[str]):
     if not hmac.compare_digest(expected_sig, incoming_sig):
         raise HTTPException(status_code=403, detail="Invalid HMAC signature rejection")
 
-@app.get("/")
+@app.get("/api/health")
 def read_root():
     return {"status": "active", "service": "vectra-governance", "mode": "zero-trust"}
 
@@ -76,3 +77,6 @@ if __name__ == "__main__":
     import uvicorn
     port = int(os.environ.get("PORT", 8080))
     uvicorn.run("main:app", host="0.0.0.0", port=port)
+
+
+app.mount("/", StaticFiles(directory="dist", html=True), name="static")

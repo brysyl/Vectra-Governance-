@@ -16,6 +16,81 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  </body>
+  
+<div id="briefingModal" onclick="if(event.target === this) toggleBriefingModal()" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+  <div onclick="event.stopPropagation()" class="bg-gray-950 border border-cyan-500/40 rounded-lg max-w-2xl w-full p-6 text-gray-200 shadow-2xl space-y-4 font-mono">
+    
+    <div class="flex justify-between items-center border-b border-gray-800 pb-3">
+      <div class="flex items-center space-x-2">
+        <span class="inline-block w-2.5 h-2.5 bg-cyan-400 rounded-full animate-pulse"></span>
+        <h3 class="text-cyan-400 font-bold text-sm tracking-wider uppercase">/// EXECUTIVE BRIEFING — VECTRA GOVERNANCE</h3>
+      </div>
+      <button onclick="toggleBriefingModal()" class="text-gray-400 hover:text-cyan-400 text-xl font-bold transition-colors">&times;</button>
+    </div>
+
+    <div class="space-y-3 text-xs leading-relaxed text-gray-300">
+      <p>
+        <strong class="text-white">Vectra Governance</strong> is an autonomous zero-trust cloud remediation engine engineered to isolate incidents without giving AI un-gated root access.
+      </p>
+
+      <div class="bg-black/60 p-3 rounded border border-gray-800/80 space-y-1.5">
+        <div class="text-cyan-400 font-bold tracking-wide">THE O.D.E.R FRAMEWORK</div>
+        <div><strong class="text-white">• OBSERVE:</strong> Edge ingestion of telemetry & high-concurrency metric spikes.</div>
+        <div><strong class="text-white">• DECIDE:</strong> HMAC SHA-256 perimeter check drops unauthenticated requests (HTTP 403).</div>
+        <div><strong class="text-white">• EXECUTE:</strong> Vertex AI (Gemini 3.7 Flash) diagnoses root causes; critical state changes freeze behind HITL locks.</div>
+        <div><strong class="text-white">• REFLECT:</strong> Immutable event audit logs emitted directly to Google Cloud Logging.</div>
+      </div>
+
+      <div class="p-3 bg-cyan-950/30 border border-cyan-800/40 rounded text-cyan-200">
+        <strong class="text-cyan-400">Judge Quick-Test:</strong> Click <strong>"INJECT ANOMALY"</strong> on the main header to simulate a 45,000 RPS metric spike and trigger real-time AI remediation.
+      </div>
+    </div>
+
+    <div class="pt-3 border-t border-gray-800 flex justify-end">
+      <button onclick="toggleBriefingModal()" class="px-4 py-1.5 bg-cyan-950 hover:bg-cyan-900 border border-cyan-500/50 text-cyan-400 rounded text-xs font-bold transition-all">
+        CLOSE BRIEFING
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleBriefingModal() {
+  const modal = document.getElementById("briefingModal");
+  if (modal) modal.classList.toggle("hidden");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btns = Array.from(document.querySelectorAll("button"));
+  const briefingBtn = document.getElementById("briefingBtn") || btns.find(b => b.textContent.trim().includes("BRIEFING"));
+  if (briefingBtn) {
+    briefingBtn.setAttribute("onclick", "toggleBriefingModal()");
+  }
+});
+</script>
+
+<script>
+window.toggleBriefingModal = function(e) {
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  const modal = document.getElementById("briefingModal");
+  if (modal) {
+    modal.classList.toggle("hidden");
+  }
+};
+
+document.addEventListener("click", (e) => {
+  const modal = document.getElementById("briefingModal");
+  const btn = Array.from(document.querySelectorAll("button")).find(b => b.textContent && b.textContent.trim().toUpperCase().includes("BRIEFING"));
+  if (btn && (btn === e.target || btn.contains(e.target))) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (modal) modal.classList.toggle("hidden");
+  }
+}, true);
+</script>
+</body>
 </html>
 
