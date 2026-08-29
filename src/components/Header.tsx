@@ -59,7 +59,7 @@ export const Header: React.FC<HeaderProps> = ({
             <p className="text-[10px] uppercase tracking-[0.35em] text-[#888888] mt-2 font-mono flex items-center gap-2">
               <span>Level 4 Site Reliability Agent</span>
               <span className="text-[#444]">//</span>
-              <span className="text-[#00F0FF]">Gemini 3.5 Flash</span>
+              <span className="text-[#00F0FF]">Gemini 3.7 Flash</span>
               <span className="text-[#444]">//</span>
               <span>GCP & Vultr Mesh</span>
             </p>

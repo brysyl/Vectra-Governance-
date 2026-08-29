@@ -348,7 +348,7 @@ export default function App() {
         <div className="flex items-center gap-2 flex-wrap">
           <span className="text-white font-bold">VECTRA.GOV v4.2</span>
           <span className="text-[#444]">//</span>
-          <span>Google GenAI SDK & Gemini 3.5 Flash</span>
+          <span>Google GenAI SDK & Gemini 3.7 Flash</span>
           <span className="text-[#444]">//</span>
           <span className="text-[#00F0FF]">All Things Agentic</span>
         </div>
