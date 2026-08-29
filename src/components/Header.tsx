@@ -104,7 +104,7 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={onOpenChaosModal}
                 className="flex items-center gap-1.5 px-3 py-2 bg-[#1A1A1E] hover:bg-rose-950/40 text-rose-400 hover:text-rose-300 text-xs font-mono font-bold tracking-wider uppercase border border-rose-500/40 hover:border-rose-400 transition-all cursor-pointer"
               >
-                <Flame className="w-3.5 h-3.5" />
+                <Flame className="w-3.7 h-3.7" />
                 <span>Inject Anomaly</span>
               </button>
 

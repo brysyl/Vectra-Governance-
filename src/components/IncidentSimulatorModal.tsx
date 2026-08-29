@@ -115,7 +115,7 @@ export const IncidentSimulatorModal: React.FC<IncidentSimulatorModalProps> = ({
                   <div
                     key={scenario.id}
                     onClick={() => setSelectedScenarioId(scenario.id)}
-                    className={`p-3.5 border cursor-pointer transition-all ${
+                    className={`p-3.7 border cursor-pointer transition-all ${
                       isSelected
                         ? 'bg-[#18181D] border-rose-500 shadow-[0_0_10px_rgba(244,63,94,0.3)]'
                         : 'bg-[#0E0E10] border-[#27272A] hover:border-[#444]'
@@ -162,7 +162,7 @@ export const IncidentSimulatorModal: React.FC<IncidentSimulatorModalProps> = ({
                 disabled={isExecuting}
                 className="flex items-center gap-2 px-5 py-2.5 bg-rose-600 hover:bg-rose-500 text-white font-mono font-bold text-xs uppercase tracking-wider shadow-[0_0_12px_rgba(244,63,94,0.4)] transition-all cursor-pointer"
               >
-                <Play className="w-3.5 h-3.5 fill-white" />
+                <Play className="w-3.7 h-3.7 fill-white" />
                 <span>Inject Anomaly & Trigger O.D.E.R.</span>
               </button>
             </div>
@@ -172,7 +172,7 @@ export const IncidentSimulatorModal: React.FC<IncidentSimulatorModalProps> = ({
           <div className="space-y-4">
             <div className="space-y-2">
               <label className="text-xs font-bold text-white uppercase flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-[#00F0FF]" />
+                <Sparkles className="w-3.7 h-3.7 text-[#00F0FF]" />
                 Describe Custom Chaos Scenario:
               </label>
               <textarea

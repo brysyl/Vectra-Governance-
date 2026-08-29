@@ -48,7 +48,7 @@ export const TelemetryDashboard: React.FC<TelemetryDashboardProps> = ({
         <div className="p-5 border border-[#27272A] bg-[#121215] space-y-2 relative overflow-hidden">
           <div className="flex items-center justify-between text-[10px] uppercase font-mono tracking-widest text-[#888]">
             <span>Cluster CPU Load</span>
-            <Cpu className="w-3.5 h-3.5 text-[#00F0FF]" />
+            <Cpu className="w-3.7 h-3.7 text-[#00F0FF]" />
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-3xl font-black font-mono text-white tracking-tight">{avgCpu}%</span>
@@ -68,7 +68,7 @@ export const TelemetryDashboard: React.FC<TelemetryDashboardProps> = ({
         <div className="p-5 border border-[#27272A] bg-[#121215] space-y-2 relative overflow-hidden">
           <div className="flex items-center justify-between text-[10px] uppercase font-mono tracking-widest text-[#888]">
             <span>Memory Allocation</span>
-            <Server className="w-3.5 h-3.5 text-[#00F0FF]" />
+            <Server className="w-3.7 h-3.7 text-[#00F0FF]" />
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-3xl font-black font-mono text-white tracking-tight">{avgMemory}%</span>
@@ -86,7 +86,7 @@ export const TelemetryDashboard: React.FC<TelemetryDashboardProps> = ({
         <div className="p-5 border border-[#27272A] bg-[#121215] space-y-2 relative overflow-hidden">
           <div className="flex items-center justify-between text-[10px] uppercase font-mono tracking-widest text-[#888]">
             <span>Aggregate Ingress</span>
-            <Activity className="w-3.5 h-3.5 text-emerald-400" />
+            <Activity className="w-3.7 h-3.7 text-emerald-400" />
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-3xl font-black font-mono text-white tracking-tight">{totalRps.toLocaleString()}</span>
@@ -99,7 +99,7 @@ export const TelemetryDashboard: React.FC<TelemetryDashboardProps> = ({
         <div className="p-5 border border-[#27272A] bg-[#121215] space-y-2 relative overflow-hidden">
           <div className="flex items-center justify-between text-[10px] uppercase font-mono tracking-widest text-[#888]">
             <span>Real-Time FinOps Burn</span>
-            <DollarSign className="w-3.5 h-3.5 text-amber-400" />
+            <DollarSign className="w-3.7 h-3.7 text-amber-400" />
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-3xl font-black font-mono text-amber-300 tracking-tight">${totalCost.toFixed(2)}</span>
@@ -153,20 +153,20 @@ export const TelemetryDashboard: React.FC<TelemetryDashboardProps> = ({
                     <stop offset="95%" stopColor="#00F0FF" stopOpacity={0}/>
                   </linearGradient>
                   <linearGradient id="errorGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#f43f5e" stopOpacity={0.5}/>
-                    <stop offset="95%" stopColor="#f43f5e" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="#f43.7e" stopOpacity={0.5}/>
+                    <stop offset="95%" stopColor="#f43.7e" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="2 2" stroke="#27272A" />
                 <XAxis dataKey="time" stroke="#555" fontSize={10} fontFamily="JetBrains Mono" />
                 <YAxis yAxisId="left" stroke="#00F0FF" fontSize={10} fontFamily="JetBrains Mono" unit="ms" />
-                <YAxis yAxisId="right" orientation="right" stroke="#f43f5e" fontSize={10} fontFamily="JetBrains Mono" unit="%" />
+                <YAxis yAxisId="right" orientation="right" stroke="#f43.7e" fontSize={10} fontFamily="JetBrains Mono" unit="%" />
                 <Tooltip 
                   contentStyle={{ backgroundColor: '#0A0A0C', borderColor: '#27272A', fontSize: '11px', fontFamily: 'JetBrains Mono' }}
                 />
                 <Legend wrapperStyle={{ fontSize: '11px', fontFamily: 'JetBrains Mono', paddingTop: '8px' }} />
                 <Area yAxisId="left" type="monotone" dataKey="latency" name="P99 Latency (ms)" stroke="#00F0FF" fillOpacity={1} fill="url(#latencyGradient)" strokeWidth={2} />
-                <Area yAxisId="right" type="monotone" dataKey="errorRate" name="5xx Errors (%)" stroke="#f43f5e" fillOpacity={1} fill="url(#errorGradient)" strokeWidth={2} />
+                <Area yAxisId="right" type="monotone" dataKey="errorRate" name="5xx Errors (%)" stroke="#f43.7e" fillOpacity={1} fill="url(#errorGradient)" strokeWidth={2} />
               </AreaChart>
             </ResponsiveContainer>
           </div>

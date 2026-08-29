@@ -126,7 +126,7 @@ Enter natural language queries or CLI commands to inspect telemetry, run diagnos
             <div className="w-2.5 h-2.5 bg-emerald-500"></div>
           </div>
           <div className="flex items-center gap-2 text-xs font-mono text-white font-bold">
-            <TerminalIcon className="w-3.5 h-3.5 text-[#00F0FF]" />
+            <TerminalIcon className="w-3.7 h-3.7 text-[#00F0FF]" />
             <span>TERMINAL.ACTIVE // VECTRA SRE COPILOT</span>
           </div>
         </div>
@@ -141,7 +141,7 @@ Enter natural language queries or CLI commands to inspect telemetry, run diagnos
             className="p-1 text-[#888] hover:text-white transition-colors cursor-pointer"
             title="Clear Console"
           >
-            <Trash2 className="w-3.5 h-3.5" />
+            <Trash2 className="w-3.7 h-3.7" />
           </button>
         </div>
       </div>
@@ -158,7 +158,7 @@ Enter natural language queries or CLI commands to inspect telemetry, run diagnos
                   {isUser ? 'USER@DEVOPS' : 'VECTRA_ENGINE'}
                 </span>
               </div>
-              <div className="whitespace-pre-wrap leading-relaxed bg-[#121215] p-3.5 border border-[#27272A]">
+              <div className="whitespace-pre-wrap leading-relaxed bg-[#121215] p-3.7 border border-[#27272A]">
                 {msg.text}
               </div>
 
@@ -183,7 +183,7 @@ Enter natural language queries or CLI commands to inspect telemetry, run diagnos
 
         {isLoading && (
           <div className="flex items-center gap-2 text-[#00F0FF] py-2 font-mono text-xs">
-            <Cpu className="w-3.5 h-3.5 animate-spin text-[#00F0FF]" />
+            <Cpu className="w-3.7 h-3.7 animate-spin text-[#00F0FF]" />
             <span>Gemini SRE Agent evaluating cluster telemetry & AST tool calls...</span>
           </div>
         )}

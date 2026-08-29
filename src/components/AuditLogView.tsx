@@ -44,7 +44,7 @@ export const AuditLogView: React.FC<AuditLogViewProps> = ({ auditLogs }) => {
 
         <div className="flex items-center gap-3">
           <div className="relative font-mono">
-            <Search className="w-3.5 h-3.5 text-[#888] absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-3.7 h-3.7 text-[#888] absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchTerm}
@@ -62,38 +62,38 @@ export const AuditLogView: React.FC<AuditLogViewProps> = ({ auditLogs }) => {
           <table className="w-full text-left text-xs text-[#CCC]">
             <thead className="bg-[#0A0A0C] text-[#888] uppercase tracking-wider font-mono border-b border-[#27272A] text-[10px]">
               <tr>
-                <th className="p-3.5">Timestamp // ID</th>
-                <th className="p-3.5">Tool Invocation</th>
-                <th className="p-3.5">Target Node</th>
-                <th className="p-3.5">Caller Identity</th>
-                <th className="p-3.5">HMAC Signature</th>
-                <th className="p-3.5">Model Armor</th>
-                <th className="p-3.5">Latency & Cost</th>
+                <th className="p-3.7">Timestamp // ID</th>
+                <th className="p-3.7">Tool Invocation</th>
+                <th className="p-3.7">Target Node</th>
+                <th className="p-3.7">Caller Identity</th>
+                <th className="p-3.7">HMAC Signature</th>
+                <th className="p-3.7">Model Armor</th>
+                <th className="p-3.7">Latency & Cost</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#27272A] font-mono text-[11px]">
               {filteredLogs.map((log) => (
                 <tr key={log.id} className="hover:bg-[#18181D] transition-colors">
-                  <td className="p-3.5 whitespace-nowrap">
+                  <td className="p-3.7 whitespace-nowrap">
                     <div className="font-bold text-white">{log.timestamp}</div>
                     <div className="text-[9px] text-[#666]">{log.id}</div>
                   </td>
 
-                  <td className="p-3.5 whitespace-nowrap">
+                  <td className="p-3.7 whitespace-nowrap">
                     <span className="px-2 py-0.5 bg-black text-[#00F0FF] font-bold border border-[#27272A]">
                       {log.toolName}()
                     </span>
                   </td>
 
-                  <td className="p-3.5 whitespace-nowrap text-white">
+                  <td className="p-3.7 whitespace-nowrap text-white">
                     {log.targetService}
                   </td>
 
-                  <td className="p-3.5 whitespace-nowrap text-[#888]">
+                  <td className="p-3.7 whitespace-nowrap text-[#888]">
                     {log.caller}
                   </td>
 
-                  <td className="p-3.5 whitespace-nowrap">
+                  <td className="p-3.7 whitespace-nowrap">
                     <button
                       onClick={() => copySignature(log.signatureHash, log.id)}
                       className="flex items-center gap-1 text-[10px] text-[#888] hover:text-[#00F0FF] bg-black px-2 py-0.5 border border-[#27272A] transition-colors cursor-pointer"
@@ -108,14 +108,14 @@ export const AuditLogView: React.FC<AuditLogViewProps> = ({ auditLogs }) => {
                     </button>
                   </td>
 
-                  <td className="p-3.5 whitespace-nowrap">
+                  <td className="p-3.7 whitespace-nowrap">
                     <span className="inline-flex items-center gap-1 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider bg-emerald-950 text-emerald-400 border border-emerald-500/40">
                       <ShieldCheck className="w-3 h-3" />
                       {log.modelArmorStatus}
                     </span>
                   </td>
 
-                  <td className="p-3.5 whitespace-nowrap text-[#AAA]">
+                  <td className="p-3.7 whitespace-nowrap text-[#AAA]">
                     <div>{log.executionTimeMs} ms</div>
                     <div className="text-[10px] text-emerald-400">
                       {log.costImpactUSD === 0 ? 'Cost Neutral' : `$${log.costImpactUSD.toFixed(2)}`}

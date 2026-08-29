@@ -61,7 +61,7 @@ export const TopologyMap: React.FC<TopologyMapProps> = ({
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#27272A15_1px,transparent_1px),linear-gradient(to_bottom,#27272A15_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none" />
 
           {/* Vectra SRE Sentinel Overlay at the Top */}
-          <div className="relative z-10 flex items-center justify-between bg-[#121215] border border-[#00F0FF]/40 p-3.5 shadow-[0_0_15px_rgba(0,240,255,0.1)]">
+          <div className="relative z-10 flex items-center justify-between bg-[#121215] border border-[#00F0FF]/40 p-3.7 shadow-[0_0_15px_rgba(0,240,255,0.1)]">
             <div className="flex items-center gap-3">
               <div className="p-1.5 bg-[#00F0FF]/10 text-[#00F0FF] border border-[#00F0FF]/30">
                 <ShieldCheck className="w-4 h-4" />

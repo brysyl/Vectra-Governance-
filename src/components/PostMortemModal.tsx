@@ -137,7 +137,7 @@ ${report.modelArmorAudit}
 
             {/* FinOps & SLA Metric Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div className="p-3.5 bg-[#0E0E10] border border-[#27272A] space-y-1">
+              <div className="p-3.7 bg-[#0E0E10] border border-[#27272A] space-y-1">
                 <span className="text-[#888] flex items-center gap-1 text-[10px] uppercase">
                   <Clock className="w-3 h-3 text-[#00F0FF]" />
                   Downtime Avoided
@@ -147,7 +147,7 @@ ${report.modelArmorAudit}
                 </div>
               </div>
 
-              <div className="p-3.5 bg-[#0E0E10] border border-[#27272A] space-y-1">
+              <div className="p-3.7 bg-[#0E0E10] border border-[#27272A] space-y-1">
                 <span className="text-[#888] flex items-center gap-1 text-[10px] uppercase">
                   <DollarSign className="w-3 h-3 text-emerald-400" />
                   Est. Outage Cost Saved
@@ -157,7 +157,7 @@ ${report.modelArmorAudit}
                 </div>
               </div>
 
-              <div className="p-3.5 bg-[#0E0E10] border border-[#27272A] space-y-1">
+              <div className="p-3.7 bg-[#0E0E10] border border-[#27272A] space-y-1">
                 <span className="text-[#888] flex items-center gap-1 text-[10px] uppercase">
                   <CheckCircle2 className="w-3 h-3 text-indigo-400" />
                   Tool Execution Cost
@@ -171,7 +171,7 @@ ${report.modelArmorAudit}
             {/* Root Cause Analysis */}
             <div className="space-y-1.5">
               <h5 className="font-bold text-white uppercase text-[10px] tracking-wider">Technical Root Cause Isolation</h5>
-              <div className="p-3.5 bg-[#0E0E10] border border-[#27272A] leading-relaxed text-[#AAA]">
+              <div className="p-3.7 bg-[#0E0E10] border border-[#27272A] leading-relaxed text-[#AAA]">
                 {report.rootCauseAnalysis}
               </div>
             </div>
@@ -182,7 +182,7 @@ ${report.modelArmorAudit}
               <div className="space-y-1.5">
                 {report.actionItems.map((item, idx) => (
                   <div key={idx} className="flex items-start gap-2 p-2.5 bg-[#0E0E10] border border-[#27272A]">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-3.7 h-3.7 text-emerald-400 shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -199,9 +199,9 @@ ${report.modelArmorAudit}
             <div className="pt-4 border-t border-[#27272A] flex items-center justify-between">
               <button
                 onClick={handleCopyMarkdown}
-                className="flex items-center gap-1.5 px-3.5 py-2 bg-[#18181D] hover:bg-[#222228] text-white text-xs border border-[#27272A] transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-3.7 py-2 bg-[#18181D] hover:bg-[#222228] text-white text-xs border border-[#27272A] transition-colors cursor-pointer"
               >
-                {isCopied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                {isCopied ? <Check className="w-3.7 h-3.7 text-emerald-400" /> : <Copy className="w-3.7 h-3.7" />}
                 <span>{isCopied ? 'Copied to Clipboard!' : 'Copy Markdown Report'}</span>
               </button>
 

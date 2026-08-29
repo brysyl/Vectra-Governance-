@@ -64,7 +64,7 @@ export const GuardrailsPanel: React.FC<GuardrailsPanelProps> = ({
             onClick={handleSave}
             className="flex items-center gap-1.5 px-4 py-2 bg-[#00F0FF] text-black font-mono font-bold text-xs uppercase tracking-wider shadow-[0_0_10px_#00F0FF] transition-all cursor-pointer"
           >
-            <CheckCircle2 className="w-3.5 h-3.5" />
+            <CheckCircle2 className="w-3.7 h-3.7" />
             <span>Apply Guardrail Updates</span>
           </button>
         )}

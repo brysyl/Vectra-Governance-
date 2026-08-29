@@ -67,7 +67,7 @@ export default function App() {
         latency: Math.floor(12 + Math.random() * 6),
         errorRate: 0.02,
         rps: Math.floor(4100 + Math.random() * 300),
-        costPerHour: 43.50 + Math.random() * 1.5,
+        costPerHour: 43.70 + Math.random() * 1.5,
       });
     }
     return points;

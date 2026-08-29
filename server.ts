@@ -51,7 +51,7 @@ app.post("/api/gemini/oder-loop", async (req, res) => {
       return res.json(fallbackResult);
     }
 
-    const systemPrompt = `You are Vectra Governance, a Level 4 Autonomous Site Reliability & FinOps remediation engine built on Google GenAI SDK and Gemini 3.5/3.7.
+    const systemPrompt = `You are Vectra Governance, a Level 4 Autonomous Site Reliability & FinOps remediation engine built on Google GenAI SDK and Gemini 3.7/3.7.
 Your mission is to execute the O.D.E.R. loop (Observe -> Diagnose -> Evaluate -> Remediate) on an active infrastructure incident.
 
 Output MUST be strictly formatted JSON matching the required schema.

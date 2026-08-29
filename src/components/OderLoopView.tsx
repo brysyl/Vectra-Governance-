@@ -276,7 +276,7 @@ export const OderLoopView: React.FC<OderLoopViewProps> = ({
         <div className="lg:col-span-8 flex flex-col gap-6">
           {/* Live Diagnostic Engine Output Terminal (matching Design HTML) */}
           <div className="border border-[#27272A] bg-[#0E0E11] flex flex-col">
-            <div className="flex justify-between items-center border-b border-[#27272A] p-3.5 bg-[#141418]">
+            <div className="flex justify-between items-center border-b border-[#27272A] p-3.7 bg-[#141418]">
               <h2 className="text-[10px] uppercase tracking-[0.2em] font-mono font-bold text-white">
                 Live Diagnostic Engine Output // Gemini 3.7
               </h2>
@@ -299,15 +299,15 @@ export const OderLoopView: React.FC<OderLoopViewProps> = ({
 
             {/* 3-Column Divide Metric Row */}
             <div className="border-t border-[#27272A] grid grid-cols-3 divide-x divide-[#27272A] bg-[#121215]">
-              <div className="p-3.5">
+              <div className="p-3.7">
                 <p className="text-[9px] uppercase text-[#666] mb-1 font-mono tracking-widest">Model Armor</p>
                 <p className="text-xs font-bold font-mono text-emerald-400">SHIELD ACTIVE</p>
               </div>
-              <div className="p-3.5">
+              <div className="p-3.7">
                 <p className="text-[9px] uppercase text-[#666] mb-1 font-mono tracking-widest">API Tool Health</p>
                 <p className="text-xs font-bold font-mono text-white">100% SIGNED</p>
               </div>
-              <div className="p-3.5">
+              <div className="p-3.7">
                 <p className="text-[9px] uppercase text-[#666] mb-1 font-mono tracking-widest">OTLP Ingest</p>
                 <p className="text-xs font-bold font-mono text-[#00F0FF]">4,820 MSG/SEC</p>
               </div>
