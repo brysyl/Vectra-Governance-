@@ -11,3 +11,4 @@ exec -l *
 /data/
 *.json
 .venv/
+__pycache__/
